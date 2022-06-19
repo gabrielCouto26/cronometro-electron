@@ -1,4 +1,4 @@
-const btnExportar = document.getElementById("btnExportar")
+const btnNovoArquivo = document.getElementById("btnNovoArquivo")
 
 const exportar = () => {
 
@@ -8,32 +8,25 @@ const exportar = () => {
   const dataAtual = new Date();
   const dataConvertida = `${dataAtual.getDate()}/${dataAtual.getMonth() + 1}/${dataAtual.getFullYear()}`
   const tempo = `${horas}h${minutos}min`
-  console.log(tempo)
-
 
   let cabeçalho = ["Data", "Tempo"];
-  let dados = [
-    { data: dataConvertida, tempo: tempo }
-  ]
+  let dados = [{ data: dataConvertida, tempo: tempo }]
 
   constroiTabela(cabeçalho, dados, "horas-trabalhadas")
-
 }
-
 
 const constroiTabela = (cabeçalho, dados, nomeDoArquivo) => {
 
   let header = cabeçalho.join(";") + '\n';
-  console.log(header)
   let csv = header;
   dados.forEach(obj => {
-    let row = [];
+    let linha = [];
     for (key in obj) {
       if (obj.hasOwnProperty(key)) {
-        row.push(obj[key]);
+        linha.push(obj[key]);
       }
     }
-    csv += row.join(";") + "\n";
+    csv += linha.join(";") + "\n";
   });
 
   let csvData = new Blob([csv], { type: 'text/csv' });
@@ -44,7 +37,6 @@ const constroiTabela = (cabeçalho, dados, nomeDoArquivo) => {
   hiddenElement.target = '_blank';
   hiddenElement.download = nomeDoArquivo + '.csv';
   hiddenElement.click();
-
 }
 
-btnExportar.addEventListener('click', exportar)
+btnNovoArquivo.addEventListener('click', exportar)

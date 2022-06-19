@@ -3,8 +3,8 @@ let segundos = 0;
 let minutos = 0;
 let horas = 0;
 
-const btnIniciar = document.getElementById("iniciar")
-const btnParar = document.getElementById("parar")
+const btnIniciar   = document.getElementById("iniciar")
+const btnParar     = document.getElementById("parar")
 const btnContinuar = document.getElementById("continuar")
 const btnReiniciar = document.getElementById("reiniciar")
 
@@ -30,45 +30,57 @@ function reiniciar() {
   minutos = 0;
   horas = 0;
 
-  Centesimas.innerHTML = ":00";
-  Segundos.innerHTML = ":00";
-  Minutos.innerHTML = ":00";
-  Horas.innerHTML = "00";
+  centesimas.innerHTML = ":00";
+  segundos.innerHTML   = ":00";
+  minutos.innerHTML    = ":00";
+  horas.innerHTML      = "00";
 
-  btnIniciar.disabled = false;
-  btnParar.disabled = true;
+  btnIniciar.disabled   = false;
+  btnParar.disabled     = true;
   btnContinuar.disabled = true;
   btnReiniciar.disabled = true;
 }
 
 function cronometro() {
+  // centesimas
   if (centesimas < 99) {
     centesimas++;
-    if (centesimas < 10) { centesimas = "0" + centesimas }
+    if (centesimas < 10)
+      centesimas = "0" + centesimas;
+
     Centesimas.innerHTML = ":" + centesimas;
   }
   if (centesimas == 99) {
     centesimas = -1;
   }
+  // segundos
   if (centesimas == 0) {
     segundos++;
-    if (segundos < 10) { segundos = "0" + segundos }
+    if (segundos < 10)
+      segundos = "0" + segundos;
+
     Segundos.innerHTML = ":" + segundos;
   }
   if (segundos == 59) {
     segundos = -1;
   }
+  // minutos
   if ((centesimas == 0) && (segundos == 0)) {
     minutos++;
-    if (minutos < 10) { minutos = "0" + minutos }
+    if (minutos < 10)
+      minutos = "0" + minutos;
+
     Minutos.innerHTML = ":" + minutos;
   }
   if (minutos == 59) {
     minutos = -1;
   }
+  // horas
   if ((centesimas == 0) && (segundos == 0) && (minutos == 0)) {
     horas++;
-    if (horas < 10) { horas = "0" + horas }
+    if (horas < 10)
+      horas = "0" + horas;
+      
     Horas.innerHTML = horas;
   }
 }
