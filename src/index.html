@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>CRONOMETRO</title>
-    <link rel="stylesheet" href="index.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>CRONOMETRO</title>
+  <link rel="stylesheet" href="index.css">
 
-    <script defer src="cronometro.js"></script>
-    <script defer src="armazenamento.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
-  </head>
-  <body class="bg-dark">
-    <div class="container mt-4">
-        <div id="contador" class="d-flex flex-row justify-content-center text-light">
-          <h1 class="" id="Horas">00</h1>
-          <h1 class="" id="Minutos">:00</h1>
-          <h1 class="" id="Segundos">:00</h1>
-          <h1 class="" id="Centesimas">:00</h1>
-        </div>
-    
-        <div id="botoesCronometro" class="d-flex flex-row justify-content-center btn-group-lg">
-          <input type="button" class="btn bg-secondary text-light border border-white m-1" id="iniciar" value=" &#9658;">
-          <input type="button" class="btn bg-secondary text-light border border-white m-1" id="parar" value=" &#8718;" disabled>
-          <input type="button" class="btn bg-secondary text-light border border-white m-1" id="continuar" value=" &#8634;" disabled>
-          <input type="button" class="btn bg-secondary text-light border border-white m-1" id="reiniciar" value=" &#8635;" disabled>
-        </div>
+  <script defer src="cronometro.js"></script>
+  <script defer src="armazenamento.js"></script>
 
-        <div id="botoesArquivo" class="d-flex flex-row justify-content-center mt-4 btn-grou-lg">
-          <input type="button" class="btn btn-secondary text-light border border-white m-1" id="btnExportar" value="Exportar">
-          <input type="button" class="btn btn-secondary text-light border border-white m-1" id="btnNovoArquivo" value="Novo arquivo">
-        </div>
+</head>
+
+<body class="bg-dark">
+  <div class="container mt-4">
+    <div id="contador" class="d-flex flex-row justify-content-center text-light">
+      <h1 class="" id="Horas">00</h1>
+      <h1 class="" id="Minutos">:00</h1>
+      <h1 class="" id="Segundos">:00</h1>
+      <h1 class="" id="Centesimas">:00</h1>
     </div>
 
-  </body>
+    <div id="botoesCronometro" class="d-flex flex-row justify-content-center btn-group-lg">
+      <input type="button" class="btn bg-secondary text-light border border-white m-1" id="iniciar" value=" &#9658;">
+      <input type="button" class="btn bg-secondary text-light border border-white m-1" id="parar" value=" &#8718;"
+        disabled>
+      <input type="button" class="btn bg-secondary text-light border border-white m-1" id="continuar" value=" &#8634;"
+        disabled>
+      <input type="button" class="btn bg-secondary text-light border border-white m-1" id="reiniciar" value=" &#8635;"
+        disabled>
+    </div>
+
+    <div id="botoesArquivo" class="d-flex flex-row justify-content-center mt-4 btn-grou-lg">
+      <input type="button" class="btn btn-secondary text-light border border-white m-1" id="btnExportar"
+        value="Exportar">
+      <input type="button" class="btn btn-secondary text-light border border-white m-1" id="btnNovoArquivo"
+        value="Novo arquivo">
+    </div>
+  </div>
+
+</body>
+
 </html>
